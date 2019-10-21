@@ -27,3 +27,15 @@ cd f10Projeto-master/frontend
 npm install
 
 npm run start
+
+# Logins
+
+# Professor
+98992
+
+carlos@escola.com.br
+
+# Aluno
+98990
+
+joao@escola.com.br
