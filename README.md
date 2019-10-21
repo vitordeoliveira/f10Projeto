@@ -21,5 +21,7 @@ npm run start
 
 # Terminal 2
 cd f10Projeto-master/frontend
+
 npm install
+
 npm run start
