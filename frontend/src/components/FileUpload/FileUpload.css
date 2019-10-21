@@ -1,0 +1,22 @@
+.custom-file-input {
+  display: none;
+}
+
+.btn-upload {
+  margin: 30px 0;
+  box-sizing: border-box;
+  padding: 10px 50px;
+  border-radius: 20px;
+  background: #ea5e2e;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.custom-file-label {
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.error-msg {
+  margin: 30px;
+}
