@@ -3,7 +3,6 @@
 Projeto completo
 
 # Iniciando
-
 Após git clone
 
 # Linux or GitBash
@@ -14,8 +13,11 @@ npm install -g nodemon
 
 # Terminal 1
 cd f10Projeto-master/backend
+
 npm install
+
 npm audit fix
+
 npm run start
 
 
