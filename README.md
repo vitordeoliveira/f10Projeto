@@ -3,7 +3,7 @@
 Projeto completo
 
 # Iniciando
-Após git clone
+git@github.com:vitordeoliveira/f10Projeto.git
 
 # Linux or GitBash
 Abra dois terminais 
