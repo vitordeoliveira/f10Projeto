@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { PrivateRoute } from "./auth/PrivateRoute";
 import Home from "./pages/Home/Login";
 import Professor from "./pages/Professor/Professor";
 import Turma from "./pages/Turma/Turma";
@@ -10,14 +11,13 @@ const routes = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home}></Route>
-        <Route
+        <PrivateRoute
           path="/professor"
           exact
           component={Professor}
-          auth={false}
-        ></Route>
+        ></PrivateRoute>
         <Route path="/turmas/:id" exact component={Turma}></Route>
-        <Route path="/aluno" exact component={Aluno}></Route>
+        <Route path="/hum" exact component={Aluno}></Route>
       </Switch>
     </BrowserRouter>
   );

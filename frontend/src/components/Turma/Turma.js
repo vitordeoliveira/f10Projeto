@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Link } from "react-router-dom";
+import Spinner from "../Spinner";
 
 const Turma = ({ id }) => {
   const [turmas, setTurmas] = useState([]);
@@ -20,21 +21,18 @@ const Turma = ({ id }) => {
           setNumeroTrabalhos(data.trabalhos.length);
         }
         setTurmas(data);
+        setloading(false);
       } catch (err) {
         console.log(err);
       }
     };
     runEffect();
-
-    setTimeout(() => {
-      setloading(false);
-    }, 1000);
   }, [id]);
 
   return (
-    <li>
+    <li Style={"list-style: none"}>
       {loading ? (
-        "Carregando"
+        <Spinner></Spinner>
       ) : (
         <div className="turma-container">
           <h3>{`${turmas.turma} - Numero de alunos: ${numeroAlunos}`}</h3>

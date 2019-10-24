@@ -86,7 +86,7 @@ routes.post(
 );
 
 routes.get("/deu", (req, res) => {
-  return res.json(req.user);
+  return res.status(200).json(req.user);
 });
 routes.get("/naodeu", (req, res) => {
   return res.status(401).json({ msg: "Login não existe" });
