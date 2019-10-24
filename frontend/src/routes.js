@@ -15,9 +15,15 @@ const routes = () => {
           path="/professor"
           exact
           component={Professor}
+          type="professor"
         ></PrivateRoute>
         <Route path="/turmas/:id" exact component={Turma}></Route>
-        <Route path="/hum" exact component={Aluno}></Route>
+        <PrivateRoute
+          path="/aluno"
+          exact
+          component={Aluno}
+          type="aluno"
+        ></PrivateRoute>
       </Switch>
     </BrowserRouter>
   );

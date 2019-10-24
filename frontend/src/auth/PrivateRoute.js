@@ -1,34 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import api from "../services/api";
+import { UserContext } from "../context/UserContext";
 
-export const PrivateRoute = ({ component: Component, ...rest }) => {
-  const [auth, setAuth] = useState(true);
-
-  const runAsyncEffect = async () => {
-    try {
-      const { data } = await api.get("/deu");
-    } catch (error) {
-      console.log("error");
-    }
-  };
-
-  useEffect(() => {
-    runAsyncEffect();
-  }, []);
-
+export const PrivateRoute = ({ component: Component, type, ...rest }) => {
+  const { auth } = useContext(UserContext);
   return (
     <Route
       {...rest}
       render={props =>
-        auth ? (
+        auth === type ? (
           <Component {...props}></Component>
         ) : (
           <Redirect
             to={{
               pathname: `/`,
               state: {
-                from: props.location
+                z: props.location
               }
             }}
           ></Redirect>

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Login.css";
 import api from "../../services/api";
+import { UserContext } from "../../context/UserContext";
 
 function Login({ history }) {
+  const { setAuth } = useContext(UserContext);
+
   const [formData, setFormData] = useState({
     usuario_id: "",
     login: ""
@@ -20,10 +23,14 @@ function Login({ history }) {
 
       const { data } = await api.post("/login", formData);
       if (data.role === "professor") {
-        return history.push("/professor");
+        setAuth("professor");
+        localStorage.setItem("token", "professor");
+        return history.push(`/professor`);
       }
 
       if (data.role === "aluno") {
+        setAuth("aluno");
+        localStorage.setItem("token", "aluno");
         return history.push("/aluno");
       }
     } catch (err) {
